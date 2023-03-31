@@ -1,0 +1,29 @@
+#include <string.h>
+
+int main()
+{  
+    int len, i;
+    char str[100], *startptr, *endptr, ch;
+  
+    printf(" Enter a string: ");
+    gets(str);
+
+    len = strlen(str);
+    startptr = str;
+    endptr = str;
+    for (i = 0; i < len - 1; i++)
+        endptr++;
+  
+    for (i = 0; i < len / 2; i++) {
+        ch = *endptr;
+        *endptr = *startptr;
+        *startptr = ch;
+
+        startptr++;
+        endptr--;
+    }
+  
+    printf("String after reversing it: %s", str);
+  
+    return 0;
+}
